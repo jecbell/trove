@@ -1,1 +1,1 @@
-web: gunicorn trove_app.wsgi --log-file -
+web: gunicorn trove_project.wsgi --log-file -

@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'csd=x+&t6lacj+*y6m9k7b$jkulzra$)!o#4gup!v1mwbcl+76'
+SECRET_KEY = '$-o!!pp00u*2bs!9vr)5&unu)$eqw$3v(0&+cyr4)l3w8bf@db'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,7 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'trove_app'
+    'trove_app',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,6 +57,13 @@ WSGI_APPLICATION = 'trove_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -67,6 +74,9 @@ DATABASES = {
         # 'PORT': '5432',
     }
 }
+
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -84,6 +94,21 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
+
+# STATIC_URL = '/static/'
+
+# HEROKU
+###########################
+# Parse database configuration from $DATABASE_URL
+if os.environ.has_key('DATABASE_URL'):
+    import dj_database_url
+    DATABASES['default'] =  dj_database_url.config()
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
 
 # HEROKU STATIC ASSETS CONFIGURATION
 ################################
