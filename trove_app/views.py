@@ -5,3 +5,6 @@ def index(request):
     data={}
     return render_to_response("trove_app/index.html",data, context_instance=RequestContext(request))
 
+def login(request):
+    data={}
+    return render_to_response("trove_app/login.html",data, context_instance=RequestContext(request))
