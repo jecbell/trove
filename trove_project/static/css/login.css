@@ -1,1 +1,61 @@
 
+body, .carousel, .carousel .item {
+	background-color: #fff;
+	font-family: 'Lato', Verdana, sans-serif;
+	font-weight: 300;
+	font-size: 24px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	height: 100%;
+}
+
+.thumbnail {
+	border: none;
+	background-color: transparent;
+}
+
+.slide1 {
+	background-image: url(/static/img/logo.gif);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+.slide2 .carousel-caption {
+	top: 30%;
+	bottom: auto;
+}
+
+.slide3 .carousel-caption {
+	top: 10%;
+	bottom: auto;
+	text-align: left;
+}
+
+.slide3 h2 {
+	margin-top: 0px;
+}
+
+.thumbnail .caption, .carousel-caption {
+	color: #A8A3CF;
+	text-shadow: none;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: 'Lato', Verdana, sans-serif;
+	font-weight: 300;
+	font-size: 24px;
+}
+
+h1, .h1 {
+	font-family: 'Slabo 27px', Georgia, serif;
+	font-size: 48px;
+	font-weight: 500;
+	color: #726BA5;
+	margin-top: 5px;
+	text-shadow: 0 1px 2px #120A47;
+}
+
+h2, .h2 {
+	font-size: 30px;
+	font-weight: 400;
+}
