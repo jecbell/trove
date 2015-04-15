@@ -9,6 +9,11 @@ body, .carousel, .carousel .item {
 	height: 100%;
 }
 
+.carousel-indicators li {
+	border-color: #726BA5;
+	background-color: #726BA5;
+}
+
 .thumbnail {
 	border: none;
 	background-color: transparent;
